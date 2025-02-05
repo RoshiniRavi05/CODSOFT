@@ -3,87 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Landing Page</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #7d6969;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-        .calculator {
-            width: 270px;
-            background: #725f5f;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        body {
             text-align: center;
         }
-        .display {
-            width: 90%;
-            height: 50px;
-            text-align: right;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            padding: 10px 10px;
-            border: none;
-            background: #c9c3c3;
+        .header {
+            background: #3f84ce;
+            color: white;
+            padding: 20px;
         }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
+        .nav {
+            background: #153659;
+            padding: 10px;
         }
-        button {
-            padding: 15px;
-            font-size: 1.2em;
-            border: none;
-            cursor: pointer;
-            background: #d3b1b1;
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
         }
-        button.operator {
-            background:  #c79090;
-            color: #fff;
+        .nav a:hover {
+            text-decoration: underline;
+            color: #ffdd57;
+        }
+        .hero {
+            position: relative;
+            padding: 160px 160px;
+            background: url('img-2.jpg') no-repeat center;
+            background-size: cover;
+            color: black;
+        }
+        .hero .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .hero .btn:hover {
+            background: #4580bf;
+        }
+        .h1{
+            font-style: bold;
+            font-size: medium;
+            color: black;   
+            padding : 10px;
+            background:whitesmoke;
+
+        }
+        .p{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: black;
+            background: #58799c;
+            padding: 10px;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            flex-wrap: wrap;
+            background-color: rgb(62, 129, 171);
+        }
+        .feature-box {
+            width: 250px;
+            padding: 20px;
+            background: rgb(149, 193, 222);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" class="display" id="display" disabled>
-        <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="appendValue('/')" class="operator">/</button>
-            <button onclick="appendValue('*')" class="operator">x</button>
-            <button onclick="appendValue('-')" class="operator">-</button>
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('+')" class="operator">+</button>
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="calculate()" class="operator">=</button>
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('0')">0</button>
+    <header class="header">
+        <h1>Welcome,We are NEXUX</h1>
+    </header>
+    <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section class="hero">
+        <h2>Your One-Stop Solution</h2>
+        <p>We provide the best services and collaborations.</p>
+    </section>
+    <section class="features">
+        <div class="feature-box">
+
+            <h3>Quality Services</h3>
         </div>
-    </div>
-    <script>
-        function appendValue(value) {
-            document.getElementById('display').value += value;
-        }
-        function clearDisplay() {
-            document.getElementById('display').value = '';
-        }
-        function calculate() {
-            try {
-                document.getElementById('display').value = eval(document.getElementById('display').value);
-            } catch {
-                document.getElementById('display').value = 'Error';
-            }
-        }
-    </script>
+        <div class="feature-box">
+         
+            <h3>Affordable Pricing</h3>
+        </div>
+        <div class="feature-box">
+        
+            <h3>24/7 Support</h3>
+        </div>
+    </section>
+    <h1 class="h1"> <u>ABOUT ME</u></h1>
+    <p class="p">
+        I'm studying computer technology as a second-year BTech student. I have a solid background in programming and web technologies and have a strong interest in software development. I can make well-organized and eye-catching web pages thanks to my understanding of HTML and CSS, and I'm always learning new front-end and back-end development techniques.
+
+I have a strong desire to solve problems, learn new technologies, and work on projects that advance my technical knowledge. As I continue my education, I want to have a deeper understanding of web development frameworks, software engineering ideas, and new developments in the IT sector.
+
+Please get in touch if you want to work together on fascinating projects or talk about cutting-edge technological concepts!
+    </p>
+    <footer class="footer">
+        <p>&copy; 2025 NEXUS Company. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
